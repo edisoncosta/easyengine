@@ -51,7 +51,7 @@ class EEMysql():
 
             return connection
         except DatabaseError as e:
-            if e.args[1] == '#42000Unknown database \'{0}\''.format(db_name):
+            if e.args[1] == 'Unknown database \'{0}\''.format(db_name):
                 raise DatabaseNotExistsError
             else:
                 raise MySQLConnectionError
